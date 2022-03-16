@@ -1,3 +1,3 @@
-# dotfiles
+# `.dotfiles`
 
-* zsh configuration
+These `.dotfiles` are mostly concerned with zsh configuration right now.

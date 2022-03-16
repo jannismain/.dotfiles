@@ -1,0 +1,9 @@
+# merge multi-part mp3 audiobooks into single file
+function mp3-merge() {
+  ffmpeg \
+  -f concat \
+  -safe 0 \
+  -i <(find "$(pwd)" -iname '*.mp3' -print | sort | sed -e "s/^/file '/; s/$/'/") \
+  -c copy \
+  merged.mp3
+}

@@ -1,0 +1,50 @@
+## Python
+### Virtual Environments
+alias venv="source env/bin/activate"
+### Pip
+
+# prevent globbing issue when installing with extras
+# i.e. pip install something[extra] --> zsh: no matches found: something[extra]
+alias pip='noglob pip'
+alias pipi="pip install"
+alias pipir="pip install -r requirements.txt"
+alias pipl="pip list"
+function pipu() {
+  if [ -n "$1" ]
+  then
+    python -m pip install --upgrade "$1"
+  else
+    python -m pip install --upgrade pip
+  fi
+}
+# Create requirements file
+alias pipreq="pip freeze > requirements.txt"
+# Update all installed packages
+function pipupall {
+  # non-GNU xargs does not support nor need `--no-run-if-empty`
+  local xargs="xargs --no-run-if-empty"
+  xargs --version 2>/dev/null | grep -q GNU || xargs="xargs"
+  pip list --outdated --format freeze | cut -d= -f1 | ${=xargs} pip install --upgrade
+}
+
+alias pipun="pip uninstall"
+# Uninstalled all installed packages
+function pipunall {
+  # non-GNU xargs does not support nor need `--no-run-if-empty`
+  local xargs="xargs --no-run-if-empty"
+  xargs --version 2>/dev/null | grep -q GNU || xargs="xargs"
+  pip list --format freeze | cut -d= -f1 | ${=xargs} pip uninstall -y
+}
+
+# configure pipx
+export PATH="$PATH:/Users/mkj/.local/bin"
+eval "$(register-python-argcomplete pipx)"
+
+# pip_search: use for `pip search`
+# alias pip='function _pip(){
+#     if [ $1 = "search" ]; then
+#         pip_search "$2";
+#     else pip "$@";
+#     fi;
+# };_pip'
+# FIXME: alias search subcommand without breaking completion for pip
