@@ -1,2 +1,1 @@
-# configure ruby
-eval "$(rbenv init -)"
+command -v rbenv && eval "$(rbenv init -)"
