@@ -51,3 +51,9 @@ fi
 #     fi;
 # };_pip'
 # FIXME: alias search subcommand without breaking completion for pip
+
+# pytest
+if command -v pytest &> /dev/null
+then
+    eval "$(register-python-argcomplete pytest)"
+fi
