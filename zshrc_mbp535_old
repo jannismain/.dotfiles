@@ -105,7 +105,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # aliases
 alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
-alias venv="source env/bin/activate"
 alias r="radian"
 alias ipython="/usr/local/bin/ipython"
 alias d="dirs -v | head -10"
@@ -123,30 +122,3 @@ CORRECT_IGNORE_FILE='.*'
 
 # mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
-
-
-function check_last_exit_code() {
-  local LAST_EXIT_CODE=$?
-  if [[ $LAST_EXIT_CODE -ne 0 ]]; then
-    local EXIT_CODE_PROMPT=' '
-    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-    EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
-    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-    echo "$EXIT_CODE_PROMPT"
-  fi
-}
-
-export RPROMPT='$(check_last_exit_code)'
-
-autoload -Uz promptinit; promptinit
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# configure ls
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
-# configure pipx
-export PATH="$PATH:/Users/mkj/.local/bin"
-autoload -U bashcompinit
-bashcompinit	
-eval "$(register-python-argcomplete pipx)"
-

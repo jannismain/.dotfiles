@@ -71,62 +71,15 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 export EDITOR='code --wait'
 
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+source ~/.dotfiles/python
+
 # Interactive Shell
-## Navigation
-alias d="dirs -v | head -10"
-alias 1="cd -"
-alias 2="cd -2"
-alias 3="cd -3"
-alias 4="cd -4"
-alias 5="cd -5"
-alias 6="cd -6"
-alias 7="cd -7"
-alias 8="cd -8"
-alias 9="cd -9"
-function mkcd() { mkdir -p "$@" && cd "$_"; }
-
-## Python
-### Virtual Environments
-alias venv="source env/bin/activate"
-### Pip
-alias pipi="pip install"
-alias pipir="pip install -r requirements.txt"
-alias pipl="pip list"
-function pipu() {
-  if [ -n "$1" ]
-  then
-    python -m pip install --upgrade "$1"
-  else
-    python -m pip install --upgrade pip
-  fi
-}
-# Create requirements file
-alias pipreq="pip freeze > requirements.txt"
-# Update all installed packages
-function pipupall {
-  # non-GNU xargs does not support nor need `--no-run-if-empty`
-  local xargs="xargs --no-run-if-empty"
-  xargs --version 2>/dev/null | grep -q GNU || xargs="xargs"
-  pip list --outdated --format freeze | cut -d= -f1 | ${=xargs} pip install --upgrade
-}
-
-# Uninstalled all installed packages
-function pipunall {
-  # non-GNU xargs does not support nor need `--no-run-if-empty`
-  local xargs="xargs --no-run-if-empty"
-  xargs --version 2>/dev/null | grep -q GNU || xargs="xargs"
-  pip list --format freeze | cut -d= -f1 | ${=xargs} pip uninstall
-}
-
 CORRECT_IGNORE_FILE='.*'
 
 
@@ -148,29 +101,6 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # configure ls
 export LSCOLORS=ExFxBxDxCxegedabagacad
-
-# configure pipx
-export PATH="$PATH:/Users/mkj/.local/bin"
-eval "$(register-python-argcomplete pipx)"
-
-# pip_search: use for `pip search`
-# alias pip='function _pip(){
-#     if [ $1 = "search" ]; then
-#         pip_search "$2";
-#     else pip "$@";
-#     fi;
-# };_pip'
-# FIXME: alias search subcommand without breaking completion for pip
-
-# pyenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# configure ruby
-eval "$(rbenv init -)"
-
-# git-extras
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # node
 # - activate specific system node version
