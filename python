@@ -9,6 +9,7 @@ alias pip='noglob pip'
 alias pipi="pip install"
 alias pipir="pip install -r requirements.txt"
 alias pipl="pip list"
+alias pipv="pip --version"
 function pipu() {
   if [ -n "$1" ]
   then
