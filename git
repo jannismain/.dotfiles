@@ -1,3 +1,7 @@
-# git-extras
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 alias g="git"
+alias gca="git commit --amend"
+alias grc="git rebase --continue"
+alias gp="git push"
+
+# git-extras
+source $HOMEBREW_PREFIX/opt/git-extras/share/git-extras/git-extras-completion.zsh
