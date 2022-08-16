@@ -37,8 +37,11 @@ function pipunall {
 }
 
 # configure pipx
-export PATH="$PATH:/Users/mkj/.local/bin"
-eval "$(register-python-argcomplete pipx)"
+if command -v pipx &> /dev/null
+then
+    export PATH="$PATH:~/.local/bin"
+    eval "$(register-python-argcomplete pipx)"  # requires bashcompinit
+fi
 
 # pip_search: use for `pip search`
 # alias pip='function _pip(){
