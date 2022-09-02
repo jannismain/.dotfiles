@@ -8,7 +8,13 @@ alias 6="cd -6"
 alias 7="cd -7"
 alias 8="cd -8"
 alias 9="cd -9"
-function mkcd() { mkdir -p "$@" && cd "$_"; }
 
-alias lsa="ls -al"
-alias la="ls -al"
+function mkcd() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories mkcd
+
+alias la="ls -Al"
+alias ll="ls -lh --color"
+# always show hidden files and add unit to size
+alias ls="${aliases[ls]:-ls} -Ah"
+
+alias tree='tree -a -I .git -I __pycache__ -I .DS_Store'
