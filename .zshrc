@@ -66,14 +66,14 @@ export EDITOR="code --wait"
 # autoload -U +X bashcompinit && bashcompinit
 
 # Source additional local files if they exist.
-z4h source ~/.dotfiles/python
-z4h source ~/.dotfiles/pyenv
-z4h source ~/.dotfiles/git
-z4h source ~/.dotfiles/ruby
-z4h source ~/.dotfiles/node
-z4h source ~/.dotfiles/media
-z4h source ~/.dotfiles/nav
-z4h source ~/.dotfiles/locale
+z4h source ~/.dotfiles/src/python
+z4h source ~/.dotfiles/src/pyenv
+z4h source ~/.dotfiles/src/git
+z4h source ~/.dotfiles/src/ruby
+z4h source ~/.dotfiles/src/node
+z4h source ~/.dotfiles/src/media
+z4h source ~/.dotfiles/src/nav
+z4h source ~/.dotfiles/src/locale
 
 # Use additional Git repositories pulled in with `z4h install`.
 
