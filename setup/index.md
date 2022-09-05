@@ -10,6 +10,12 @@
 ./install_brew_casks
 ```
 
+## Link dotfiles
+
+```sh
+./link_dotfiles
+```
+
 ## Configure `git`
 
 ```sh

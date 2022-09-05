@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# move to location of this script, so other commands are relative
+# to this location. (e.g. when script is called from different dir)
+cd `dirname $0`
+
+cd ../src
+for FILE in $(ls -A . | grep "\..*")
+do
+    ln -shf $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
+done
