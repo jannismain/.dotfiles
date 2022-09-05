@@ -92,7 +92,7 @@ z4h bindkey z4h-cd-up      Shift+Up     # cd into the parent directory
 z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
 
 # Autoload functions.
-autoload -Uz zmv
+# autoload -Uz zmv
 
 # Define named directories: ~w <=> Windows home directory on WSL.
 # [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
