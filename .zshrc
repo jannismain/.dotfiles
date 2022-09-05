@@ -76,6 +76,7 @@ z4h source ~/.dotfiles/src/media
 z4h source ~/.dotfiles/src/nav
 z4h source ~/.dotfiles/src/locale
 z4h source ~/.dotfiles/src/pre-commit
+z4h source ~/.dotfiles/src/colors
 
 # Use additional Git repositories pulled in with `z4h install`.
 
