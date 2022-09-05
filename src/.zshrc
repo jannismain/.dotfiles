@@ -26,6 +26,9 @@ zstyle ':z4h:autosuggestions' forward-char 'accept'
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' recurse-dirs 'yes'
 
+# tab in fzf accepts current item and moves on instead of selecting next option
+# zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
+
 # Enable direnv to automatically source .envrc files.
 zstyle ':z4h:direnv'         enable 'yes'
 # Show "loading" and "unloading" notifications from direnv.
@@ -79,11 +82,12 @@ z4h source ~/.dotfiles/src/pre-commit
 z4h source ~/.dotfiles/src/colors
 
 # Use additional Git repositories pulled in with `z4h install`.
+z4h install MichaelAquilina/zsh-you-should-use
 
-#
 # This is just an example that you should delete. It does nothing useful.
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 # z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+z4h load   MichaelAquilina/zsh-you-should-use
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
