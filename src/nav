@@ -12,8 +12,9 @@ alias 9="cd -9"
 function mkcd() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories mkcd
 
+alias l="ls"
 alias la="ls -Al"
-alias ll="ls -lh --color"
+alias ll="ls -o --color"
 # always show hidden files and add unit to size
 alias ls="${aliases[ls]:-ls} -Ah"
 
