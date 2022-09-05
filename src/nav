@@ -19,3 +19,4 @@ alias ll="ls -o --color"
 alias ls="${aliases[ls]:-ls} -Ah"
 
 alias tree='tree -a -I .git -I __pycache__ -I .DS_Store'
+alias ss='du -d 0 -h * | sort -h' # sort by size
