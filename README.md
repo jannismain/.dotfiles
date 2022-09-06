@@ -7,7 +7,7 @@ I'm using [zsh4humans](https://github.com/romkatv/zsh4humans) as a base setup an
 ## Getting Started
 
 ```console
-git clone https://github.com/jannismain/dotfiles ~/.dotfiles
+git clone https://github.com/jannismain/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
 make
 ```
