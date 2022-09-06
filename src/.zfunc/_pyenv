@@ -26,3 +26,5 @@ case "$state" in
 esac
 
 return 0
+
+# source: https://github.com/pyenv/pyenv/pull/1644
