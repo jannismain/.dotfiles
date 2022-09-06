@@ -3,6 +3,5 @@
 # using a custom completion script .zfunc/_pyenv
 # to allow for tab-completion within z4h/fzf
 # see https://github.com/pyenv/pyenv/pull/1644
-# eval "$(pyenv init -)"
-eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
