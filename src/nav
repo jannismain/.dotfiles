@@ -13,10 +13,10 @@ function mkcd() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories mkcd
 
 alias l="ls"
-alias la="ls -Al"
-alias ll="ls -o --color"
-# always show hidden files and add unit to size
-alias ls="${aliases[ls]:-ls} -Ah"
+alias la="ls -A"
+alias ll="ls -Ao"
+# always show colors and output human-readable sizes
+alias ls="${aliases[ls]:-ls} -h --color"
 
 alias tree='tree -a -I .git -I __pycache__ -I .DS_Store'
 alias ss='du -d 0 -h * | sort -h' # sort by size
