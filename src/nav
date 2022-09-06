@@ -1,3 +1,5 @@
+export EDITOR="code-insiders --new-window --wait"
+
 alias d="dirs -v | head -10"
 alias 1="cd -"
 alias 2="cd -2"
