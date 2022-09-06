@@ -1,4 +1,7 @@
 #!/bin/bash
-eval "$(pyenv init -)"
+
+# using a custom completion script .zfunc/_pyenv
+# to allow for tab-completion within z4h/fzf
+# eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
