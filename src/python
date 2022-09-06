@@ -46,15 +46,6 @@ then
     eval "$(register-python-argcomplete pipx)"  # requires bashcompinit
 fi
 
-# pip_search: use for `pip search`
-# alias pip='function _pip(){
-#     if [ $1 = "search" ]; then
-#         pip_search "$2";
-#     else pip "$@";
-#     fi;
-# };_pip'
-# FIXME: alias search subcommand without breaking completion for pip
-
 # pytest
 if command -v pytest &> /dev/null
 then
