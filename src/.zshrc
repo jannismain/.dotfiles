@@ -64,7 +64,7 @@ fpath=(~/.zfunc $fpath)
 # Export environment variables.
 export GPG_TTY=$TTY
 export HOMEBREW_NO_ENV_HINTS=1
-export EDITOR="code --wait"
+export EDITOR="code-insiders --new-window --wait"
 
 # Enable bash completions
 # autoload -U +X bashcompinit && bashcompinit
