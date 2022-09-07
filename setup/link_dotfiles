@@ -7,5 +7,20 @@ cd `dirname $0`
 cd ../src
 for FILE in $(ls -A . | grep "\..*")
 do
-    ln -shf $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
+    ln -sh $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
+done
+
+cd ../private
+for FILE in $(ls -AF . | grep "\..*")
+do
+    if [[ $FILE == ".git" ]]; then continue; fi
+    if [[ ${FILE:0-1} == "/" ]]; then
+        # symlink files from dir into same dir under HOME
+        # see https://stackoverflow.com/a/20142456
+        target=~/${FILE::${#FILE}-1}
+        shopt -s dotglob;
+        cp -Rsv $PWD/$FILE $target
+        continue
+    fi
+    ln -sh $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
 done
