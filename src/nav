@@ -11,9 +11,6 @@ alias 7="cd -7"
 alias 8="cd -8"
 alias 9="cd -9"
 
-function mkcd() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
-compdef _directories mkcd
-
 alias l="ls"
 alias la="ls -A"
 alias ll="ls -Ao"

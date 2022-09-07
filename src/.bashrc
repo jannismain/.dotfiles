@@ -1,0 +1,11 @@
+# personal
+source ~/.dotfiles/src/python
+source ~/.dotfiles/src/pyenv
+source ~/.dotfiles/src/git
+source ~/.dotfiles/src/ruby
+source ~/.dotfiles/src/node
+source ~/.dotfiles/src/media
+source ~/.dotfiles/src/nav
+source ~/.dotfiles/src/locale
+source ~/.dotfiles/src/pre-commit
+source ~/.dotfiles/src/colors

@@ -4,4 +4,8 @@ alias grc="git rebase --continue"
 alias gp="git push"
 
 # git-extras
-source $HOMEBREW_PREFIX/opt/git-extras/share/git-extras/git-extras-completion.zsh
+if [[ $MYSHELL == 'zsh' ]]; then
+    source `brew --prefix git-extras`/share/git-extras/git-extras-completion.zsh
+else
+    source `brew --prefix git-extras`/etc/bash_completion.d/git-extras
+fi

@@ -1,4 +1,5 @@
 bash
+bash-completions@2
 cjson
 cloc
 cmake
