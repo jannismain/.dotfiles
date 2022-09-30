@@ -1,0 +1,10 @@
+cjson
+cmake
+docker
+docker-compose
+git
+git-extras
+json-c
+openldap
+qt
+websocketd
