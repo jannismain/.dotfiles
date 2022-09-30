@@ -14,8 +14,8 @@ alias 9="cd +9"
 alias l="ls"
 alias la="ls -A"
 alias ll="ls -Ao"
-# always show colors and output human-readable sizes
-alias ls="${aliases[ls]:-ls} -h --color"
+# always output human-readable sizes
+alias ls="${aliases[ls]:-ls} -h"
 
 alias tree='tree -a -I .git -I __pycache__ -I .DS_Store'
 alias ss='du -d 0 -h * | sort -h' # sort by size
