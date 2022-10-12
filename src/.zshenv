@@ -43,4 +43,6 @@ fi
 . "$Z4H"/z4h.zsh || return
 
 setopt rcs
-. "$HOME/.cargo/env"
+if [ -e "$HOME"/.cargo/env ]; then
+  . "$HOME/.cargo/env"
+fi
