@@ -64,6 +64,7 @@ fpath=(~/.zfunc $fpath)
 # Export environment variables.
 export GPG_TTY=$TTY
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Enable bash completions
 # autoload -U +X bashcompinit && bashcompinit

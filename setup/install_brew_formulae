@@ -1,5 +1,8 @@
 #!/bin/bash
 
+brew tap homebrew/autoupdate
+brew autoupdate start --upgrade --cleanup --enable-notification
+
 brew update
     git-extras\
     pipx
