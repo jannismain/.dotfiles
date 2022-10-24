@@ -82,6 +82,7 @@ z4h source ~/.dotfiles/src/locale
 z4h source ~/.dotfiles/src/pre-commit
 z4h source ~/.dotfiles/src/colors
 z4h source ~/.dotfiles/src/zsh-functions
+z4h source ~/.dotfiles/src/direnv
 
 # Use additional Git repositories pulled in with `z4h install`.
 z4h install MichaelAquilina/zsh-you-should-use

@@ -1,0 +1,5 @@
+if test $MYSHELL_ZSH; then
+    eval "$(direnv hook zsh)"
+else
+    eval "$(direnv hook bash)"
+fi
