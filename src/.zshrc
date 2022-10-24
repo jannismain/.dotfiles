@@ -60,6 +60,7 @@ z4h init || return
 # Extend PATH.
 path=(/opt/homebrew/bin /usr/local/bin ~/bin $path)
 fpath=(~/.zfunc $fpath)
+z4h source ~/.profile
 
 # Export environment variables.
 export GPG_TTY=$TTY
