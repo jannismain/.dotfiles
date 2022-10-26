@@ -85,12 +85,12 @@ z4h source ~/.dotfiles/src/zsh-functions
 z4h source ~/.dotfiles/src/direnv
 
 # Use additional Git repositories pulled in with `z4h install`.
-z4h install MichaelAquilina/zsh-you-should-use
+z4h install MichaelAquilina/zsh-you-should-use || return
 
 # This is just an example that you should delete. It does nothing useful.
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 # z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
-z4h load   MichaelAquilina/zsh-you-should-use
+z4h source   zsh-you-should-use/you-should-use.plugin.zsh
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
