@@ -10,6 +10,13 @@ do
     ln -sh $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
 done
 
+cd ../bin
+mkdir -p ~/bin
+for FILE in $(ls -A . | grep "\..*")
+do
+    ln -sh $PWD/$FILE ~/bin/$FILE && echo "~/bin/$FILE ✔️"
+done
+
 cd ../private
 for FILE in $(ls -AF . | grep "\..*")
 do
