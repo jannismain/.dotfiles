@@ -1,6 +1,7 @@
 alias g="git"
 alias gca="git commit --amend"
 alias gri="git rebase --interactive"
+alias grim="git rebase --interactive origin/main"
 alias grc="git rebase --continue"
 alias gp="git push"
 
