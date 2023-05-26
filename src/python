@@ -44,6 +44,7 @@ if command -v pipx &> /dev/null
 then
     export PATH="$PATH:~/.local/bin"
     eval "$(register-python-argcomplete pipx)"  # requires bashcompinit
+    export PIPX_DEFAULT_PYTHON=python  # use system python by default
 fi
 
 # pytest
