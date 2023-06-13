@@ -6,8 +6,6 @@
 
 ```sh
 ./install_brew
-./install_brew_formulae
-./install_brew_casks
 ```
 
 ## Link dotfiles

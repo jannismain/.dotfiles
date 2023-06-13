@@ -8,5 +8,5 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-read -p "Press enter to install brew packages... "
+read -p "Continue to install brew packages... "
 brew bundle --file=~/.dotfiles/setup/Brewfile
