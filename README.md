@@ -5,7 +5,7 @@ I'm using [zsh4humans](https://github.com/romkatv/zsh4humans) as a base setup an
 ## Getting Started
 
 ```console
-git clone --recurse-submodules https://github.com/jannismain/.dotfiles ~/.dotfiles
+git clone --recurse-submodules --remote-submodules https://github.com/jannismain/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
 make
 ```
