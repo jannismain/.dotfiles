@@ -1,3 +1,3 @@
 .SILENT:
 @:
-	./setup/link_dotfiles
+	./setup/setup

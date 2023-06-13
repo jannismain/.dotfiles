@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# move to location of this script, so other commands are relative
+# to this location. (e.g. when script is called from different dir)
+cd `dirname $0`
+
+./setup_brew
+./setup_git
+./setup_dotfiles
