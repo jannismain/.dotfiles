@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# setup git aliases
+git config --global user.name Jannis Mainczyk
+git config --global user.email jmainczyk@gmail.com
+
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
+
+git config --global core.editor "code --wait"
+git config --global core.excludesfile ~/.dotfiles/src/.gitignore
+git config --global push.autoSetupRemote true

@@ -1,0 +1,16 @@
+# OS-specific
+.DS_Store
+*.dSYM
+
+# pyenv
+.python-version
+
+# rbenv
+.ruby-version
+
+# IDE-specific
+.vscode/*
+
+# VM / Containers / ...
+.vagrant
+.devcontainer/*
