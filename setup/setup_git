@@ -10,4 +10,10 @@ git config --global alias.st status
 
 git config --global core.editor "code --wait"
 git config --global core.excludesfile ~/.dotfiles/src/.gitignore
+
+# publish new branches on push
 git config --global push.autoSetupRemote true
+
+# working with submodules
+git config --global diff.submodule log
+git config --global status.submodulesummary 1
