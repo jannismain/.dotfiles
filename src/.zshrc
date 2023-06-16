@@ -57,9 +57,8 @@ z4h install MichaelAquilina/zsh-you-should-use || return
 z4h init || return
 
 # Extend PATH.
-path=(/opt/homebrew/bin /usr/local/bin ~/bin $path)
+path=(~/bin ~/.dotfiles/bin ~/.dotfiles/private/bin /opt/homebrew/bin /usr/local/bin $path)
 fpath=(~/.zfunc $fpath)
-z4h source ~/.profile
 
 # Export environment variables.
 export GPG_TTY=$TTY
@@ -70,6 +69,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # autoload -U +X bashcompinit && bashcompinit
 
 # Source additional local files if they exist.
+z4h source ~/.profile
 z4h source ~/.dotfiles/src/python
 z4h source ~/.dotfiles/src/pyenv
 z4h source ~/.dotfiles/src/git
