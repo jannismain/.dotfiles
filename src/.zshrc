@@ -47,9 +47,8 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 # Clone additional Git repositories from GitHub.
 #
 # This doesn't do anything apart from cloning the repository and keeping it
-# up-to-date. Cloned files can be used after `z4h init`. This is just an
-# example. If you don't plan to use Oh My Zsh, delete this line.
-# z4h install ohmyzsh/ohmyzsh || return
+# up-to-date. Cloned files can be used after `z4h init`.
+z4h install MichaelAquilina/zsh-you-should-use || return
 
 # Install or update core components (fzf, zsh-autosuggestions, etc.) and
 # initialize Zsh. After this point console I/O is unavailable until Zsh
@@ -85,12 +84,10 @@ z4h source ~/.dotfiles/src/zsh-functions
 z4h source ~/.dotfiles/src/direnv
 
 # Use additional Git repositories pulled in with `z4h install`.
-z4h install MichaelAquilina/zsh-you-should-use || return
 
-# This is just an example that you should delete. It does nothing useful.
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
-# z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
-z4h source   zsh-you-should-use/you-should-use.plugin.zsh
+z4h load   MichaelAquilina/zsh-you-should-use
+export YSU_MESSAGE_POSITION="after"
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
