@@ -6,9 +6,6 @@ alias grc="git rebase --continue"
 alias gp="git push"
 
 # git-extras
-export MYSHELL=`ps -p $$ | tail -n 1 | cut -c 26-`
-export MYSHELL_ZSH=`echo $MYSHELL | grep "zsh"`
-export MYSHELL_BASH=`echo $MYSHELL | grep "bash"`
 if test $MYSHELL_ZSH; then
     source `brew --prefix git-extras`/share/git-extras/git-extras-completion.zsh
 else
