@@ -5,3 +5,14 @@
 # see https://github.com/pyenv/pyenv/pull/1644
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+function pv() {
+  if [ -n "$1" ]
+  then
+    venv_name=$1
+  else
+    venv_name=`basename $PWD`
+  fi
+  pyenv virtualenv 3.11.3 "$venv_name" 2> /dev/null
+  pyenv shell $venv_name
+}
