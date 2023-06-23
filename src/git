@@ -4,6 +4,8 @@ alias gri="git rebase --interactive"
 alias grim="git rebase --interactive origin/main"
 alias grc="git rebase --continue"
 alias gp="git push"
+alias gl="git log"
+alias glo="git log --oneline"
 
 # git-extras
 if test $MYSHELL_ZSH; then
