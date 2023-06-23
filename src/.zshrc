@@ -59,7 +59,7 @@ z4h init || return
 
 # Extend PATH.
 path=(~/bin ~/.dotfiles/bin ~/.dotfiles/private/bin /opt/homebrew/bin /usr/local/bin $path)
-fpath=(~/.zfunc $fpath)
+fpath=(~/.dotfiles/.zfunc $fpath)
 
 # Export environment variables.
 export GPG_TTY=$TTY

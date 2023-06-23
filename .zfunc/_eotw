@@ -1,0 +1,7 @@
+#compdef eotw
+
+_eotw_completion() {
+  eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _EOTW_COMPLETE=complete_zsh eotw)
+}
+
+compdef _eotw_completion eotw
