@@ -89,6 +89,7 @@ z4h source ~/.dotfiles/src/direnv
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 z4h load   MichaelAquilina/zsh-you-should-use
 export YSU_MESSAGE_POSITION="after"
+export YSU_HARDCORE=1
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
