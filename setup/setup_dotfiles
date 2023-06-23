@@ -4,19 +4,35 @@
 # to this location. (e.g. when script is called from different dir)
 cd `dirname $0`
 
+# link files in src/ with a leading `.` (aka dotfiles) into home directory `~`
 cd ../src
-for FILE in $(ls -A . | grep "\..*")
+for FILE in $(ls -AF . | grep "\..*")
 do
     # do not link .gitignore into ~
     if [[ $FILE == ".gitignore" ]]; then continue; fi
+    if [[ ${FILE:0-1} == "/" ]]; then
+        # symlink files from dir into same dir under HOME
+        # see https://stackoverflow.com/a/20142456
+        target=~/${FILE::${#FILE}-1}
+        shopt -s dotglob;
+        cp -Rsvn $PWD/$FILE $target
+        continue
+    fi
     ln -sh $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
 done
 
-cd ../bin
-mkdir -p ~/bin
-for FILE in $(ls -A . | grep "\..*")
+# mirror files in subdirectories into ~
+for FILE in $(ls -AF . | grep "[^\.].*/")
 do
-    ln -sh $PWD/$FILE ~/bin/$FILE && echo "~/bin/$FILE ✔️"
+    if [[ ${FILE:0-1} == "/" ]]; then
+        echo $FILE
+        # symlink files from dir into same dir under HOME
+        # see https://stackoverflow.com/a/20142456
+        target=~/${FILE::${#FILE}-1}
+        echo $target
+        shopt -s dotglob;
+        cp -Rsvn $PWD/$FILE $target && echo "$target ✔️"
+    fi
 done
 
 cd ../private
@@ -28,7 +44,7 @@ do
         # see https://stackoverflow.com/a/20142456
         target=~/${FILE::${#FILE}-1}
         shopt -s dotglob;
-        cp -Rsv $PWD/$FILE $target
+        cp -Rsvn $PWD/$FILE $target
         continue
     fi
     ln -sh $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
