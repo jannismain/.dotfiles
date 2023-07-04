@@ -20,6 +20,7 @@ function pv() {
     venv_name=`basename $PWD`
   fi
   pyenv virtualenv `pyenv latest 3` "$venv_name" 2> /dev/null
+  pyenv local $venv_name
   pyenv shell $venv_name
 }
 
