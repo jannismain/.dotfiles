@@ -22,3 +22,5 @@ alias ls="${aliases[ls]:-ls} -h"
 
 alias tree='tree -a -I .git -I __pycache__ -I .DS_Store'
 alias ss='du -d 0 -h * | sort -h' # sort by size
+
+alias m='make'
