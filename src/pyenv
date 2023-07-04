@@ -6,6 +6,12 @@
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Create and activate a new virtual environment with latest available
+# Python version for project in current directory.
+# Usage:
+#   $ cd my_project
+#   $ pv
+#   (my_project) $ _
 function pv() {
   if [ -n "$1" ]
   then
@@ -13,6 +19,8 @@ function pv() {
   else
     venv_name=`basename $PWD`
   fi
-  pyenv virtualenv 3.11.3 "$venv_name" 2> /dev/null
+  pyenv virtualenv `pyenv latest 3` "$venv_name" 2> /dev/null
   pyenv shell $venv_name
 }
+
+alias pvd='pyenv virtualenv-delete'
