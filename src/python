@@ -52,3 +52,7 @@ if command -v pytest &> /dev/null
 then
     eval "$(register-python-argcomplete pytest)"
 fi
+
+# hatch
+alias h="hatch"
+alias hr="hatch run"
