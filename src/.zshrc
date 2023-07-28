@@ -26,9 +26,6 @@ zstyle ':z4h:autosuggestions' forward-char 'accept'
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' recurse-dirs 'yes'
 
-# tab in fzf accepts current item and moves on instead of selecting next option
-# zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
-
 # Enable direnv to automatically source .envrc files.
 zstyle ':z4h:direnv'         enable 'yes'
 # Show "loading" and "unloading" notifications from direnv.
@@ -89,7 +86,7 @@ z4h source ~/.dotfiles/src/direnv
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 z4h load   MichaelAquilina/zsh-you-should-use
 export YSU_MESSAGE_POSITION="after"
-export YSU_HARDCORE=1
+export YSU_HARDCORE=0
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
