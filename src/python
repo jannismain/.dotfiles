@@ -2,7 +2,7 @@
 alias p="python"
 alias p3="python3"
 ### Virtual Environments
-alias venv="source env/bin/activate"
+alias venv="source env/bin/activate 2> /dev/null || source .venv/bin/activate"
 ### Pip
 
 # prevent globbing issue when installing with extras
