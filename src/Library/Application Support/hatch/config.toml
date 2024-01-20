@@ -9,7 +9,7 @@ data = "/Users/mkj/Library/Application Support/hatch"
 cache = "/Users/mkj/Library/Caches/hatch"
 
 [dirs.env]
-virtual = "~/.hatch"
+virtual = "~/.pyenv/versions"
 [projects]
 
 [publish.index]
