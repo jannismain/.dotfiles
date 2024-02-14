@@ -80,6 +80,7 @@ z4h source ~/.dotfiles/src/pre-commit
 z4h source ~/.dotfiles/src/colors
 z4h source ~/.dotfiles/src/zsh-functions
 z4h source ~/.dotfiles/src/direnv
+z4h source ~/.dotfiles/src/rust
 
 # Use additional Git repositories pulled in with `z4h install`.
 
