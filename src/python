@@ -10,6 +10,7 @@ alias venv="source env/bin/activate 2> /dev/null || source .venv/bin/activate"
 alias pip='noglob pip'
 alias pipi="pip install"
 alias pipir="pip install -r requirements.txt"
+alias pipirin="pip install -r requirements.in"
 alias pipl="pip list"
 alias pipv="pip --version"
 function pipu() {
