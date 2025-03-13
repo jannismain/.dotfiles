@@ -1,0 +1,7 @@
+filter_exec: Obsidian
+
+extra_excludes:
+  # obsidian provides its own replacement for arrow symbols
+  # espanso replacement clashes with that and leads to
+  # unexpected behavior in the form of deleted lines
+  - ../match/arrows.yml

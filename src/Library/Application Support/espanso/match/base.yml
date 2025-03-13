@@ -9,7 +9,7 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":espanso"
+  - trigger: ";espanso"
     replace: "Hi there!"
 
   # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
@@ -17,13 +17,13 @@ matches:
   # But matches can also be dynamic:
 
   # Print the current date
-  - trigger: ":date"
+  - trigger: ";date"
     replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
+          format: "%Y-%m-%d"
 
   # Print the output of a shell command
   - trigger: ":shell"
@@ -51,10 +51,6 @@ matches:
         type: date
         params:
           format: "%Y-%m-%d"
-
-  - trigger: ";euro"
-    replace: "€"
-
   - trigger: ";coauth"
     replace:
     form: "Co-authored-by: [[colleague]]"
@@ -62,7 +58,8 @@ matches:
       colleague:
         type: choice
         values:
-          - Michael Nieland <michael.nieland@iis.fraunhofer.de>
-          - Katja Vornberger <katja.vornberger@iis.fraunhofer.de>
-          - Jannis Mainczyk <jannis.mainczyk@iis.fraunhofer.de>
-          - itas <ilgaz.onur.tas@iis.fraunhofer.de>
+          - Christian Barthel <christian.barthel@codecentric.de>
+          - Jannis Mainczyk <jannis.mainczyk@codecentric.de>
+          - Christian Foerg <christian.foerg@codecentric.de>
+          - Stefanie Schwilski <stefanie.schwilski@codecentric.de>
+          - Sophie Presuhn <sophie.presuhn@codecentric.de>
