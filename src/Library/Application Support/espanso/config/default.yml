@@ -37,4 +37,11 @@
 # uses the clipboard if the text is longer than 'clipboard_threshold' characters.
 # clipboard_threshold: 100
 
-# For a list of all the available options, visit the official docs at: https://espanso.org/docs/
+# https://espanso.org/docs/configuration/options/
+search_shortcut: ALT+CTRL+SPACE
+
+# Hide the espanso icon from the menu bar
+show_icon: false
+
+# Hide the notification when config is reloaded
+show_notifications: true
