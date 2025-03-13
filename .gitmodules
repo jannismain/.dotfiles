@@ -1,6 +1,6 @@
 [submodule "private"]
 	path = private
-	url = ../private.git
+	url = ../private
 	branch = main
 [submodule "bin"]
 	path = bin
