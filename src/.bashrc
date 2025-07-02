@@ -10,3 +10,4 @@
 . ~/.dotfiles/src/pre-commit
 . ~/.dotfiles/src/colors
 . ~/.dotfiles/src/direnv
+. ~/.dotfiles/private/secrets
