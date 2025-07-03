@@ -50,7 +50,19 @@ then
 fi
 alias pxl="pipx list"
 alias pxi="pipx install"
-alias pxu="pipx upgrade"
+alias pxun="pipx uninstall"
+function pxu() {
+  if [ -n "$1" ]
+  then
+    pipx upgrade "$1"
+  else
+    pipx upgrade-all
+  fi
+}
+
+pipx_dump() {
+  pipx list --json > $HOME/.dotfiles/setup/pipx-packages.json
+}
 
 # pytest
 if command -v pytest &> /dev/null
