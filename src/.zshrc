@@ -56,10 +56,10 @@ z4h init || return
 
 # Extend PATH.
 path=(~/bin ~/.dotfiles/bin ~/.dotfiles/private/bin /opt/homebrew/bin /usr/local/bin $path)
-fpath=(~/.dotfiles/.zfunc $fpath)
+fpath=(~/.dotfiles/.zfunc /Users/main/.docker/completions $fpath)
 
 # Export environment variables.
-export GPG_TTY=$TTY
+export GPG_TTY=$(tty)
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -67,9 +67,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # autoload -U +X bashcompinit && bashcompinit
 
 # Source additional local files if they exist.
+# adds ~200ms of time until first command when shell starts
 z4h source ~/.profile
 z4h source ~/.dotfiles/src/python
-z4h source ~/.dotfiles/src/pyenv
 z4h source ~/.dotfiles/src/git
 z4h source ~/.dotfiles/src/ruby
 z4h source ~/.dotfiles/src/node
@@ -85,10 +85,11 @@ z4h source ~/.dotfiles/private/secrets
 
 # Use additional Git repositories pulled in with `z4h install`.
 
-# z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 z4h load   MichaelAquilina/zsh-you-should-use
 export YSU_MESSAGE_POSITION="after"
-export YSU_HARDCORE=0
+export YSU_MESSAGE_FORMAT="$(tput setaf 3)\n'%alias' does the same as '%command' (%alias_type)$(tput sgr0)"
+# export YSU_HARDCORE=1  # enable hardcore mode
+unset YSU_HARDCORE # disable hardcore mode
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
@@ -111,3 +112,44 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 
 # This will automatically press Tab for the second time when the first Tab inserts an unambiguous prefix.
 setopt auto_menu
+
+
+autoload -Uz compinit; compinit
+zstyle ':completion:*' menu select
+
+
+# use colors from pure prompt
+# Set the colors.
+typeset -gA prompt_pure_colors_default prompt_pure_colors
+prompt_pure_colors_default=(
+    execution_time       yellow
+    git:arrow            cyan
+    git:stash            cyan
+    git:branch           242
+    git:branch:cached    red
+    git:action           yellow
+    git:dirty            218
+    host                 242
+    path                 blue
+    prompt:error         red
+    prompt:success       magenta
+    prompt:continuation  242
+    suspended_jobs       red
+    user                 242
+    user:root            default
+    virtualenv           242
+)
+prompt_pure_colors=("${(@kv)prompt_pure_colors_default}")
+prompt_pure_set_colors() {
+	local color_temp key value
+	for key value in ${(kv)prompt_pure_colors}; do
+		zstyle -t ":prompt:pure:$key" color "$value"
+		case $? in
+			1) # The current style is different from the one from zstyle.
+				zstyle -s ":prompt:pure:$key" color color_temp
+				prompt_pure_colors[$key]=$color_temp ;;
+			2) # No style is defined.
+				prompt_pure_colors[$key]=$prompt_pure_colors_default[$key] ;;
+		esac
+	done
+}

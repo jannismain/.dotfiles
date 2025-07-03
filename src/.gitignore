@@ -14,3 +14,16 @@
 # VM / Containers / ...
 .vagrant
 .devcontainer/*
+
+# Log Time to Tempo
+.lt
+
+# Python
+__pycache__
+
+# Node
+.npm
+
+# Secrets
+.env
+.env.local

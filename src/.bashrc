@@ -1,6 +1,5 @@
 # personal
 . ~/.dotfiles/src/python
-. ~/.dotfiles/src/pyenv
 . ~/.dotfiles/src/git
 . ~/.dotfiles/src/ruby
 . ~/.dotfiles/src/node
@@ -10,4 +9,5 @@
 . ~/.dotfiles/src/pre-commit
 . ~/.dotfiles/src/colors
 . ~/.dotfiles/src/direnv
+. ~/.dotfiles/src/rust
 . ~/.dotfiles/private/secrets
