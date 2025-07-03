@@ -35,7 +35,7 @@ do
     fi
 done
 
-cd ../private
+cd ../private/src
 for FILE in $(ls -AF . | grep "\..*")
 do
     if [[ $FILE == ".git" ]]; then continue; fi
@@ -48,4 +48,18 @@ do
         continue
     fi
     ln -sh $PWD/$FILE ~/$FILE && echo "~/$FILE ✔️"
+done
+
+# mirror files in subdirectories into ~
+for FILE in $(ls -AF . | grep "[^\.].*/")
+do
+    if [[ ${FILE:0-1} == "/" ]]; then
+        echo $FILE
+        # symlink files from dir into same dir under HOME
+        # see https://stackoverflow.com/a/20142456
+        target=~/${FILE::${#FILE}-1}
+        echo $target
+        shopt -s dotglob;
+        cp -Rsvn $PWD/$FILE $target && echo "$target ✔️"
+    fi
 done

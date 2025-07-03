@@ -1,0 +1,1247 @@
+{
+    "pipx_spec_version": "0.1",
+    "venvs": {
+        "argcomplete": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/argcomplete/bin/activate-global-python-argcomplete",
+                            "__type__": "Path"
+                        },
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/argcomplete/bin/python-argcomplete-check-easy-install-script",
+                            "__type__": "Path"
+                        },
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/argcomplete/bin/register-python-argcomplete",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {},
+                    "apps": [
+                        "activate-global-python-argcomplete",
+                        "python-argcomplete-check-easy-install-script",
+                        "register-python-argcomplete"
+                    ],
+                    "apps_of_dependencies": [],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "argcomplete",
+                    "package_or_url": "argcomplete",
+                    "package_version": "3.6.2",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "cogapp": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/cogapp/bin/cog",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {},
+                    "apps": [
+                        "cog"
+                    ],
+                    "apps_of_dependencies": [],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "cogapp",
+                    "package_or_url": "cogapp",
+                    "package_version": "3.5.1",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "docformatter": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/docformatter/bin/docformatter",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "charset-normalizer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/docformatter/bin/normalizer",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "docformatter"
+                    ],
+                    "apps_of_dependencies": [
+                        "normalizer"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "docformatter",
+                    "package_or_url": "docformatter",
+                    "package_version": "1.7.7",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "fastmcp": {
+            "metadata": {
+                "injected_packages": {
+                    "imessagedb": {
+                        "app_paths": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/imessagedb",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "app_paths_of_dependencies": {
+                            "future": [
+                                {
+                                    "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/futurize",
+                                    "__type__": "Path"
+                                },
+                                {
+                                    "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/pasteurize",
+                                    "__type__": "Path"
+                                }
+                            ],
+                            "heic2png": [
+                                {
+                                    "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/heic2png",
+                                    "__type__": "Path"
+                                }
+                            ],
+                            "numpy": [
+                                {
+                                    "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/f2py",
+                                    "__type__": "Path"
+                                },
+                                {
+                                    "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/numpy-config",
+                                    "__type__": "Path"
+                                }
+                            ],
+                            "pngquant-cli": [
+                                {
+                                    "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/pngquant",
+                                    "__type__": "Path"
+                                }
+                            ]
+                        },
+                        "apps": [
+                            "imessagedb"
+                        ],
+                        "apps_of_dependencies": [
+                            "futurize",
+                            "pasteurize",
+                            "heic2png",
+                            "f2py",
+                            "numpy-config",
+                            "pngquant"
+                        ],
+                        "include_apps": false,
+                        "include_dependencies": false,
+                        "man_pages": [],
+                        "man_pages_of_dependencies": [],
+                        "man_paths": [],
+                        "man_paths_of_dependencies": {},
+                        "package": "imessagedb",
+                        "package_or_url": "imessagedb==1.4.7",
+                        "package_version": "1.4.7",
+                        "pinned": false,
+                        "pip_args": [],
+                        "suffix": ""
+                    },
+                    "phonenumbers": {
+                        "app_paths": [],
+                        "app_paths_of_dependencies": {},
+                        "apps": [],
+                        "apps_of_dependencies": [],
+                        "include_apps": false,
+                        "include_dependencies": false,
+                        "man_pages": [],
+                        "man_pages_of_dependencies": [],
+                        "man_paths": [],
+                        "man_paths_of_dependencies": {},
+                        "package": "phonenumbers",
+                        "package_or_url": "phonenumbers==8.13.52",
+                        "package_version": "8.13.52",
+                        "pinned": false,
+                        "pip_args": [],
+                        "suffix": ""
+                    }
+                },
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/fastmcp",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "httpx": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/httpx",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "jsonschema": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/jsonschema",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "markdown-it-py": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/markdown-it",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "mcp": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/mcp",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pygments": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "python-dotenv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/dotenv",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "typer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/typer",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "uvicorn": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/fastmcp/bin/uvicorn",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "fastmcp"
+                    ],
+                    "apps_of_dependencies": [
+                        "httpx",
+                        "mcp",
+                        "jsonschema",
+                        "dotenv",
+                        "uvicorn",
+                        "markdown-it",
+                        "pygmentize",
+                        "typer"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "fastmcp",
+                    "package_or_url": "fastmcp",
+                    "package_version": "2.10.1",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "git-filter-repo": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/git-filter-repo/bin/git-filter-repo",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {},
+                    "apps": [
+                        "git-filter-repo"
+                    ],
+                    "apps_of_dependencies": [],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "git-filter-repo",
+                    "package_or_url": "git-filter-repo",
+                    "package_version": "2.47.0",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "hatch": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/hatch/bin/hatch",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "hatchling": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/hatchling",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "httpx": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/httpx",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "keyring": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/keyring",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "markdown-it-py": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/markdown-it",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pygments": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "userpath": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/userpath",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "uv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/uv",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/uvx",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "virtualenv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/hatch/bin/virtualenv",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "hatch"
+                    ],
+                    "apps_of_dependencies": [
+                        "hatchling",
+                        "httpx",
+                        "keyring",
+                        "markdown-it",
+                        "pygmentize",
+                        "userpath",
+                        "uv",
+                        "uvx",
+                        "virtualenv"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "hatch",
+                    "package_or_url": "hatch",
+                    "package_version": "1.14.1",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "init-python-project": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/init-python-project/bin/init-python-project",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "copier": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/init-python-project/bin/copier",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "dunamai": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/init-python-project/bin/dunamai",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "markdown-it-py": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/init-python-project/bin/markdown-it",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pygments": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/init-python-project/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "typer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/init-python-project/bin/typer",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "init-python-project"
+                    ],
+                    "apps_of_dependencies": [
+                        "copier",
+                        "dunamai",
+                        "pygmentize",
+                        "typer",
+                        "markdown-it"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "init-python-project",
+                    "package_or_url": "init-python-project",
+                    "package_version": "0.0.6",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "ipython": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/ipython/bin/ipython",
+                            "__type__": "Path"
+                        },
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/ipython/bin/ipython3",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "pygments": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/ipython/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "ipython",
+                        "ipython3"
+                    ],
+                    "apps_of_dependencies": [
+                        "pygmentize"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [
+                        "man1/ipython.1"
+                    ],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/ipython/share/man/man1/ipython.1",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "man_paths_of_dependencies": {},
+                    "package": "ipython",
+                    "package_or_url": "ipython",
+                    "package_version": "9.4.0",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "log-time-to-tempo": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/log-time",
+                            "__type__": "Path"
+                        },
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/lt",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "charset-normalizer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/normalizer",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "coloredlogs": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/coloredlogs",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "dateparser": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/dateparser-download",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "humanfriendly": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/humanfriendly",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "jira": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/jirashell",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "keyring": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/keyring",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "markdown-it-py": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/markdown-it",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pygments": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "python-dotenv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/dotenv",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "simple-term-menu": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/simple-term-menu",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "typer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/log-time-to-tempo/bin/typer",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "log-time",
+                        "lt"
+                    ],
+                    "apps_of_dependencies": [
+                        "coloredlogs",
+                        "humanfriendly",
+                        "dateparser-download",
+                        "jirashell",
+                        "normalizer",
+                        "keyring",
+                        "dotenv",
+                        "markdown-it",
+                        "pygmentize",
+                        "simple-term-menu",
+                        "typer"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "log-time-to-tempo",
+                    "package_or_url": "/Users/main/projects/log-time-to-tempo",
+                    "package_version": "0.0.7",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "pip-search": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/pip-search/bin/pip_search",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "charset-normalizer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/pip-search/bin/normalizer",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "markdown-it-py": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/pip-search/bin/markdown-it",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pygments": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/pip-search/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "pip_search"
+                    ],
+                    "apps_of_dependencies": [
+                        "normalizer",
+                        "markdown-it",
+                        "pygmentize"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "pip-search",
+                    "package_or_url": "pip-search",
+                    "package_version": "0.0.14",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "pipenv": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/pipenv/bin/pipenv",
+                            "__type__": "Path"
+                        },
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/pipenv/bin/pipenv-resolver",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "virtualenv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/pipenv/bin/virtualenv",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "pipenv",
+                        "pipenv-resolver"
+                    ],
+                    "apps_of_dependencies": [
+                        "virtualenv"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "pipenv",
+                    "package_or_url": "pipenv",
+                    "package_version": "2025.0.3",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "poetry": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/poetry/bin/poetry",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "build": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/pyproject-build",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "cachecontrol": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/doesitcache",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "charset-normalizer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/normalizer",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "dulwich": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/dul-receive-pack",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/dul-upload-pack",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/dulwich",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "findpython": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/findpython",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "httpx": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/httpx",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "keyring": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/keyring",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pbs-installer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/pbs-install",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pkginfo": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/pkginfo",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "virtualenv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/virtualenv",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "xattr": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/poetry/bin/xattr",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "poetry"
+                    ],
+                    "apps_of_dependencies": [
+                        "pyproject-build",
+                        "doesitcache",
+                        "normalizer",
+                        "dul-receive-pack",
+                        "dul-upload-pack",
+                        "dulwich",
+                        "findpython",
+                        "keyring",
+                        "pbs-install",
+                        "httpx",
+                        "pkginfo",
+                        "virtualenv",
+                        "xattr"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "poetry",
+                    "package_or_url": "poetry",
+                    "package_version": "2.1.3",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "pre-commit": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/pre-commit/bin/pre-commit",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "identify": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/pre-commit/bin/identify-cli",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "nodeenv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/pre-commit/bin/nodeenv",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "virtualenv": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/pre-commit/bin/virtualenv",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "pre-commit"
+                    ],
+                    "apps_of_dependencies": [
+                        "identify-cli",
+                        "nodeenv",
+                        "virtualenv"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "pre-commit",
+                    "package_or_url": "pre-commit",
+                    "package_version": "4.2.0",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "radon": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/radon/bin/radon",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {},
+                    "apps": [
+                        "radon"
+                    ],
+                    "apps_of_dependencies": [],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "radon",
+                    "package_or_url": "radon",
+                    "package_version": "6.0.1",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "rembg": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/Users/main/.pipx/venvs/rembg/bin/rembg",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "charset-normalizer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/normalizer",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "fastapi": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/fastapi",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "filetype": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/filetype",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "gradio": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/gradio",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/upload_theme",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "httpx": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/httpx",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "huggingface-hub": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/huggingface-cli",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/tiny-agents",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "imageio": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/imageio_download_bin",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/imageio_remove_bin",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "jsonschema": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/jsonschema",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "markdown-it-py": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/markdown-it",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "numba": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/numba",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "numpy": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/f2py",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/numpy-config",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pygments": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "ruff": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/ruff",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "tifffile": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/lsm2bin",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/tiff2fsspec",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/tiffcomment",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/tifffile",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "tqdm": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/tqdm",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "typer": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/typer",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "uvicorn": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/uvicorn",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "watchdog": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/watchmedo",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "websockets": [
+                            {
+                                "__Path__": "/Users/main/.pipx/venvs/rembg/bin/websockets",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "rembg"
+                    ],
+                    "apps_of_dependencies": [
+                        "jsonschema",
+                        "f2py",
+                        "numpy-config",
+                        "normalizer",
+                        "numba",
+                        "imageio_download_bin",
+                        "imageio_remove_bin",
+                        "lsm2bin",
+                        "tiff2fsspec",
+                        "tiffcomment",
+                        "tifffile",
+                        "tqdm",
+                        "fastapi",
+                        "filetype",
+                        "gradio",
+                        "upload_theme",
+                        "httpx",
+                        "huggingface-cli",
+                        "tiny-agents",
+                        "websockets",
+                        "ruff",
+                        "typer",
+                        "markdown-it",
+                        "pygmentize",
+                        "uvicorn",
+                        "watchmedo"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "rembg",
+                    "package_or_url": "rembg[cli]",
+                    "package_version": "2.0.66",
+                    "pinned": false,
+                    "pip_args": [
+                        "--force-reinstall"
+                    ],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.12.2",
+                "source_interpreter": {
+                    "__Path__": "/Users/main/.pyenv/shims/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+pipx install-all --fetch-missing-python $HOME/.dotfiles/setup/pipx-packages.json
