@@ -1,9 +1,8 @@
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# python
+python=python3
 
 # shell distinction helper
 export MYSHELL=`ps -p $$ | tail -n 1 | cut -c 26-`

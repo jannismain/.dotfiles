@@ -2,7 +2,7 @@
 .DS_Store
 *.dSYM
 
-# pyenv
+# python version pinning
 .python-version
 
 # rbenv

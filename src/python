@@ -1,6 +1,5 @@
 ## Python
-alias p="python"
-alias p3="python3"
+alias p="python3"
 ### Virtual Environments
 alias venv="source env/bin/activate 2> /dev/null || source .venv/bin/activate"
 ### Pip
@@ -16,9 +15,9 @@ alias pipv="pip --version"
 function pipu() {
   if [ -n "$1" ]
   then
-    python -m pip install --upgrade "$1"
+    pip install --upgrade "$1"
   else
-    python -m pip install --upgrade pip
+    pip install --upgrade pip
   fi
 }
 # Create requirements file
@@ -40,29 +39,6 @@ function pipunall {
   pip list --format freeze | cut -d= -f1 | ${=xargs} pip uninstall -y
 }
 
-# configure pipx
-if command -v pipx &> /dev/null
-then
-    export PATH="$PATH:~/.local/bin"
-    eval "$(register-python-argcomplete pipx)"  # requires bashcompinit
-    export PIPX_DEFAULT_PYTHON=python  # use system python by default
-    export PIPX_HOME=~/.pipx/
-fi
-alias pxl="pipx list"
-alias pxi="pipx install"
-alias pxun="pipx uninstall"
-function pxu() {
-  if [ -n "$1" ]
-  then
-    pipx upgrade "$1"
-  else
-    pipx upgrade-all
-  fi
-}
-
-pipx_dump() {
-  pipx list --json > $HOME/.dotfiles/setup/pipx-packages.json
-}
 
 # pytest
 if command -v pytest &> /dev/null
@@ -75,37 +51,12 @@ alias h="hatch"
 alias hr="hatch run"
 alias hv="hatch version"
 
+# uv
+alias uvr="uv run"
+
 function pyclean {
     find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 }
 
 # bump-my-version
 alias bump="bump-my-version"
-
-# configure pyenv
-
-# using a custom completion script .zfunc/_pyenv
-# to allow for tab-completion within z4h/fzf
-# see https://github.com/pyenv/pyenv/pull/1644
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
-# Create and activate a new virtual environment with latest available
-# Python version for project in current directory.
-# Usage:
-#   $ cd my_project
-#   $ pv
-#   (my_project) $ _
-function pv() {
-  if [ -n "$1" ]
-  then
-    venv_name=$1
-  else
-    venv_name=`basename $PWD`
-  fi
-  pyenv virtualenv `pyenv latest 3` "$venv_name" 2> /dev/null
-  pyenv local $venv_name
-  pyenv shell $venv_name
-}
-
-alias pvd='pyenv virtualenv-delete'

@@ -9,7 +9,6 @@ data = "/Users/mkj/Library/Application Support/hatch"
 cache = "/Users/mkj/Library/Caches/hatch"
 
 [dirs.env]
-virtual = "~/.pyenv/versions"
 [projects]
 
 [publish.index]
@@ -17,7 +16,7 @@ repo = "main"
 
 [template]
 name = "Jannis Mainczyk"
-email = "jannis.mainczyk@iis.fraunhofer.de"
+email = "jannis.mainczyk@codecentric.de"
 
 [template.licenses]
 headers = true
