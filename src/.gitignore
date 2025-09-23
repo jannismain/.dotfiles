@@ -24,6 +24,15 @@ __pycache__
 # Node
 .npm
 
-# Secrets
+# Local Configuration & Secrets
 .env
 .env.local
+.envrc
+
+# gitlab-ci-local
+.gitlab-ci-local/*
+
+# Claude Code
+.claude
+CLAUDE.md
+.mcp.json
