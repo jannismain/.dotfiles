@@ -1,1 +1,1 @@
-export PATH="$PATH:~/.cargo/bin"
+export PATH="$PATH:$(brew --prefix rustup)/bin:$(brew --prefix)/bin:~/.cargo/bin"
