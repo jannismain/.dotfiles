@@ -7,3 +7,7 @@ function mp3-merge() {
   -c copy \
   merged.mp3
 }
+
+function m4b-to-mp3() {
+  ffmpeg -i "$1" -map_metadata 0 -id3v2_version 3 -c:a libmp3lame -q:a 2 "${1%.m4b}.mp3"
+}
