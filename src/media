@@ -5,7 +5,7 @@ function mp3-merge() {
   -safe 0 \
   -i <(find "$(pwd)" -iname '*.mp3' -print | sort | sed -e "s/^/file '/; s/$/'/") \
   -c copy \
-  merged.mp3
+  "$(basename "$(pwd)").mp3"
 }
 
 function m4b-to-mp3() {
