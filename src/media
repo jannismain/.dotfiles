@@ -11,3 +11,13 @@ function mp3-merge() {
 function m4b-to-mp3() {
   ffmpeg -i "$1" -map_metadata 0 -id3v2_version 3 -c:a libmp3lame -q:a 2 "${1%.m4b}.mp3"
 }
+
+function m4b-to-mp3-per-chapter() {
+  ffprobe -v error -print_format json -show_chapters -show_format "$1" \
+| jq -r '.chapters[] | [(.id|tostring), .start_time, .end_time, .tags.title] | @tsv' \
+| while IFS=$'\t' read -r id start end title; do
+  safe_title=$(echo "$title" | sed 's#[/:*?"<>|]#_#g')
+  ffmpeg -ss "$start" -to "$end" -i "$1" -c:a libmp3lame -q:a 2 \
+         -map_metadata 0 -id3v2_version 3 "${id}-${safe_title}.mp3"
+done
+}
