@@ -1,4 +1,5 @@
 # personal
+. ~/.dotfiles/src/claude
 . ~/.dotfiles/src/python
 . ~/.dotfiles/src/git
 . ~/.dotfiles/src/ruby
