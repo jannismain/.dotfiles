@@ -30,7 +30,7 @@ __pycache__
 .envrc
 
 # gitlab-ci-local
-.gitlab-ci-local/*
+.gitlab-ci-local
 
 # Claude Code
 .claude
