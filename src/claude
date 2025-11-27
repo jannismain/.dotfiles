@@ -1,12 +1,3 @@
 #!/bin/sh
-alias claude="/Users/main/.claude/local/claude"
-
-# Use Claude Code with much cheaper Deepseek Model
-
-export ANTHROPIC_BASE_URL=<https://api.deepseek.com/anthropic>
-export ANTHROPIC_MODEL=deepseek-reasoner
-export ANTHROPIC_SMALL_FAST_MODEL=deepseek-chat
-export API_TIMEOUT_MS=600000
-
-# agentbox to run claude code in YOLO-mode in a container
-export PATH="$PATH:~/ext/agentbox"
+alias claude="~/.claude/local/claude"
+alias agentbox="~/ext/agentbox/agentbox"
