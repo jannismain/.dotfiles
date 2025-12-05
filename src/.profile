@@ -11,3 +11,6 @@ export MYSHELL_BASH=`echo $MYSHELL | grep "bash"`
 
 # enable bash-completions
 [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+
+# direnv config
+export DIRENV_LOG_FORMAT=

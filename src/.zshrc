@@ -89,8 +89,8 @@ z4h source ~/.dotfiles/private/secrets
 
 z4h load   MichaelAquilina/zsh-you-should-use
 export YSU_MESSAGE_POSITION="after"
-export YSU_MESSAGE_FORMAT="$(tput setaf 3)\n'%alias' does the same as '%command' (%alias_type)$(tput sgr0)"
-# export YSU_HARDCORE=1  # enable hardcore mode
+export YSU_MESSAGE_FORMAT="$(tput setaf 3)\n%alias_type found: \`%command\` → \`%alias\`$(tput sgr0)"
+export YSU_HARDCORE=0  # disable hardcore mode
 unset YSU_HARDCORE # disable hardcore mode
 
 # Define key bindings.
@@ -155,3 +155,20 @@ prompt_pure_set_colors() {
 		esac
 	done
 }
+
+# pnpm
+export PNPM_HOME="/Users/main/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+# claude code
+alias claude="~/.claude/local/claude"
+# claude code end
+
+# Added by Antigravity
+export PATH="/Users/main/.antigravity/antigravity/bin:$PATH"

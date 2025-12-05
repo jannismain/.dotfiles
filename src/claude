@@ -1,3 +1,2 @@
 #!/bin/sh
-alias claude="~/.claude/local/claude"
 alias agentbox="~/ext/agentbox/agentbox"
