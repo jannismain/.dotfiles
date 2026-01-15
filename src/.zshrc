@@ -172,3 +172,6 @@ alias claude="~/.claude/local/claude"
 
 # Added by Antigravity
 export PATH="/Users/main/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/main/.opencode/bin:$PATH
