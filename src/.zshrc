@@ -82,6 +82,7 @@ z4h source ~/.dotfiles/src/zsh-functions
 z4h source ~/.dotfiles/src/direnv
 z4h source ~/.dotfiles/src/rust
 z4h source ~/.dotfiles/src/copilot
+z4h source ~/.dotfiles/src/docker
 z4h source ~/.dotfiles/src/claude
 z4h source ~/.dotfiles/private/secrets
 
