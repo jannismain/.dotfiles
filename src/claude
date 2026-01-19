@@ -3,3 +3,11 @@ alias agentbox="~/ext/agentbox/agentbox"
 
 # experimental beta features may interfere with portkey (via vertex-ai/bedrock) usage
 export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1
+
+claude-portkey() {
+    CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1 \
+    ANTHROPIC_BASE_URL="https://api.portkey.ai" \
+    ANTHROPIC_AUTH_TOKEN="dummy" \
+    ANTHROPIC_CUSTOM_HEADERS="x-portkey-api-key: ${PORTKEY_API_KEY}" \
+    ~/.claude/local/claude "$@"
+}
