@@ -11,3 +11,8 @@ claude-portkey() {
     ANTHROPIC_CUSTOM_HEADERS="x-portkey-api-key: ${PORTKEY_API_KEY}" \
     ~/.claude/local/claude "$@"
 }
+
+alias ccusage='pnpx ccusage "$@"'
+alias claude-usage='ccusage'
+alias codex-usage='pnpx @ccusage/codex@latest "$@"'
+alias opencode-usage='pnpx @ccusage/opencode@latest "$@"'
