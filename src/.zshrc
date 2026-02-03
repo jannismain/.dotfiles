@@ -167,10 +167,6 @@ esac
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
-# claude code
-alias claude="~/.claude/local/claude"
-# claude code end
-
 # Added by Antigravity
 export PATH="/Users/main/.antigravity/antigravity/bin:$PATH"
 
