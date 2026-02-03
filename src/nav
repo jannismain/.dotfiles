@@ -28,3 +28,7 @@ alias tree='tree -a -I .git -I __pycache__ -I .DS_Store -I .env -I .venv -I env 
 alias ss='du -d 0 -h * | sort -h' # sort by size
 
 alias m='make'
+
+# source .env files easily
+# set -a means all variables are automatically exported
+alias .env='set -a && (source .env >/dev/null 2>&1 || echo "No .env file found") && set +a'
