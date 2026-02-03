@@ -31,4 +31,4 @@ alias m='make'
 
 # source .env files easily
 # set -a means all variables are automatically exported
-alias .env='set -a && (source .env >/dev/null 2>&1 || echo "No .env file found") && set +a'
+.env () { set -a; . "${1:-./.env}"; set +a; }
