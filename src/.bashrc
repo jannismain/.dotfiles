@@ -11,4 +11,4 @@
 . ~/.dotfiles/src/colors
 . ~/.dotfiles/src/direnv
 . ~/.dotfiles/src/rust
-. ~/.dotfiles/private/secrets
+
