@@ -1,2 +1,2 @@
 #!/bin/sh
-pnpx ccstatusline@latest "$@"
+bunx ccstatusline@latest "$@"
