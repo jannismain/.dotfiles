@@ -7,6 +7,9 @@ claude-portkey() (
     ANTHROPIC_BASE_URL="https://api.portkey.ai" \
     ANTHROPIC_AUTH_TOKEN="dummy" \
     ANTHROPIC_CUSTOM_HEADERS="x-portkey-api-key: ${PORTKEY_API_KEY}" \
+    ANTHROPIC_DEFAULT_SONNET_MODEL="@vertex-ai/anthropic.claude-sonnet-4-6" \
+    ANTHROPIC_DEFAULT_HAIKU_MODEL="@vertex-ai/anthropic.claude-haiku-4-5@20251001" \
+    ANTHROPIC_DEFAULT_OPUS_MODEL="@vertex-ai/anthropic.claude-opus-4-6" \
     claude "$@"
 )
 
