@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Remove unwanted helpers
+process_agents() {
+  local directory=$1
+  shift
+  local agents=("$@")
+  local pattern=$(
+    IFS=\|
+    echo "${agents[*]}"
+  )
+  shopt -s nullglob
+  for plist in "$directory"/{LaunchAgents,LaunchDaemons,PrivilegedHelperTools}/*; do
+    if [ ! -s "$plist" ]; then continue; fi
+    if ! echo "$plist" | egrep -q "^.*Library.*/($pattern)"; then
+      local plist_name=$(basename "$plist" .plist)
+      if [[ $directory = /Library* ]]; then
+        echo "sudo bash -c 'launchctl disable system/$plist_name && true > \"$plist\" && chmod a-wx \"$plist\"'"
+      else
+        echo "bash -c 'launchctl disable gui/$(id -u)/$plist_name && true > \"$plist\" && chmod a-wx \"$plist\"'"
+      fi
+    fi
+  done
+}
+
+# Define global and local agents to manage
+global_agents=(
+  at.obdev.littlesnitch         # Little Snitch
+  com.docker                    # Docker
+)
+process_agents "/Library" "${global_agents[@]}"
+
+local_agents=(
+  homebrew.mxcl.ollama        # ollama
+  jp.plentycom.boa.SteerMouse # SteerMouse
+)
+process_agents "$HOME/Library" "${local_agents[@]}"
+
+# credits: https://thomas-witt.com/blog/how-to-monitor-and-remove-unwanted-launch-agents-and-daemons-in-macos/
