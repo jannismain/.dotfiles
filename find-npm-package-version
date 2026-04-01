@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+"""Find installed versions of an npm package inside node_modules directories."""
+
+import argparse
+import json
+import os
+
+
+def find_installed_versions(root: str, package: str, version_filter: str | None = None):
+    results = []
+    for dirpath, dirnames, filenames in os.walk(root):
+        # When we find a node_modules dir, look for the target package inside it
+        if "node_modules" not in dirnames:
+            continue
+        # The package could be at node_modules/<package> or node_modules/@scope/<name>
+        candidate = os.path.join(dirpath, "node_modules", package, "package.json")
+        if os.path.isfile(candidate):
+            version = _read_version(candidate)
+            if version:
+                matched = version_filter is None or version.startswith(version_filter)
+                results.append((os.path.relpath(candidate, root), version, matched))
+        # Don't descend into this node_modules ourselves — let os.walk handle it
+        # so we also find nested node_modules (hoisted vs. nested installs)
+    return results
+
+
+def _read_version(path: str) -> str | None:
+    try:
+        with open(path, "rb") as f:
+            data = json.loads(f.read())
+        return data.get("version")
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Find installed npm package versions in node_modules")
+    parser.add_argument("package", nargs="?", default="axios", help="Package name to search for (default: axios)")
+    parser.add_argument("version", nargs="?", default=None, help="Version or version prefix to highlight (e.g. '1.6' or '1.14.1')")
+    parser.add_argument("-d", "--directory", default=".", help="Root directory to search (default: current dir)")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Show all results, not just matches")
+    args = parser.parse_args()
+
+    root = os.path.realpath(args.directory)
+    results = find_installed_versions(root, args.package, args.version)
+
+    if not results:
+        print(f"No installed '{args.package}' found under {root}")
+        return
+
+    results.sort(key=lambda r: r[0])
+    filtering = args.version is not None
+    display = results if (args.verbose or not filtering) else [r for r in results if r[2]]
+
+    if not display:
+        matched_count = sum(1 for *_, m in results if m)
+        print(f"No matches for '{args.version}' ({len(results)} installed, use -v to see all)")
+        return
+
+    max_file = max(len(r[0]) for r in display)
+    print(f"\n{'Location':<{max_file}}  Version")
+    print(f"{'─' * max_file}  {'─' * 20}")
+    for file, version, matched in display:
+        marker = "  ✓" if filtering and matched else "  ✗" if filtering else ""
+        print(f"{file:<{max_file}}  {version}{marker}")
+
+    matched_count = sum(1 for *_, m in results if m)
+    total = len(results)
+    if filtering:
+        hidden = total - len(display)
+        extra = f", {hidden} non-matching hidden (use -v to show)" if hidden else ""
+        print(f"\nFound {matched_count} matching '{args.version}' out of {total} installed{extra}")
+    else:
+        print(f"\nFound {total} installed copy/copies of '{args.package}'")
+
+
+if __name__ == "__main__":
+    main()
