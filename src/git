@@ -7,6 +7,7 @@ alias gp="git push"
 alias gpf="git push --force-with-lease"
 alias gl="git log"
 alias glo="git log --oneline"
+alias gsr="git stash show -p | git apply --reverse"
 
 # git-extras
 if test $MYSHELL_ZSH; then
