@@ -58,8 +58,5 @@ matches:
       colleague:
         type: choice
         values:
-          - Christian Barthel <christian.barthel@codecentric.de>
+          - Christopher Schädlich <christopher.schaedlich@codecentric.de>
           - Jannis Mainczyk <jannis.mainczyk@codecentric.de>
-          - Christian Foerg <christian.foerg@codecentric.de>
-          - Stefanie Schwilski <stefanie.schwilski@codecentric.de>
-          - Sophie Presuhn <sophie.presuhn@codecentric.de>
