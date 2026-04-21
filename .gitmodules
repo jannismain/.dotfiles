@@ -2,7 +2,3 @@
 	path = private
 	url = ../private
 	branch = main
-[submodule "bin"]
-	path = bin
-	url = ../utils
-	branch = main
