@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# load suffixes from SUFFIXES_TO_STRIP env var (comma-sep), or fall back to defaults
+if [[ -n "$SUFFIXES_TO_STRIP" ]]; then
+  IFS=',' read -r -a suffixes <<< "$SUFFIXES_TO_STRIP"
+else
+  suffixes=("SomeSuffix")
+fi
+
+for f in "$@"; do
+  [[ -f "$f" ]] || continue
+  dir=$(dirname -- "$f")
+  base=$(basename -- "$f")
+  fname=${f##*/} # filename.ext
+  name=${base%.*} # name without extension
+  ext=${fname##*.}
+
+  for suf in "${suffixes[@]}"; do
+    if [[ $name == *"$suf" ]]; then
+      # remove the suffix
+      newname=${name%$suf}
+      # strip ALL trailing spaces, dashes or underscores
+      newname="${newname%"${newname##*[![:space:]]}"}"
+      newname=${newname%%+([ _-])}
+      newname="${newname%"${newname##*[![:space:]]}"}"
+      printf "Renaming '%s' to '%s/%s.%s'\n" "$fname" "$dir" "$newname" "$ext"
+      mv -f -- "$f" "$dir/$newname.$ext"
+      break
+    # else
+    #  printf "Not Renaming '%s' → Suffix not found: '%s'\n" "$name" "$suf"
+    fi
+  done
+done

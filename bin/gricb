@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby -w
+if ARGV.include?('-h')
+  puts <<~USAGE
+    Interactive git rebase of the current branch onto main.
+
+    Usage: gricb
+      -h    Show this help message.
+  USAGE
+  exit
+end
+
+# git rebase interactive current branch (gricb)
+output=`git log main..  --oneline | wc -l`
+number_of_commits=output[/\d+/]
+`git rebase -i HEAD~#{number_of_commits}`

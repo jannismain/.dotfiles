@@ -1,0 +1,5 @@
+osascript <<'END'
+tell application "System Events"
+    if exists (process "Books") then set visible of application process "Books" to false
+end tell                                                  -- uses the supported 'visible' flag, see https://discussions.apple.com/thread/7144977
+END

@@ -1,0 +1,5 @@
+#!/bin/zsh
+# 1. import quietly
+/usr/bin/open -gj -a "Books" "$1"     # -g = no focus, -j = launch hidden, see https://apple.stackexchange.com/questions/291179/open-app-in-a-different-desktop
+# 2. immediately hide any reader window that Books may have opened
+hide_books_app

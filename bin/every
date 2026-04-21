@@ -1,0 +1,46 @@
+#!/bin/bash
+usage="Usage: $(basename $0) [-t] [-h|help] [seconds] command
+
+Call 'command' until script is terminated.
+
+When seconds are provided, will sleep for that amount of time
+in between command calls. Defaults to 1 second.
+
+Options:
+    -t          print time before each call
+    -h, help    show this help
+"
+
+# parsing options
+print_time=false
+while getopts ":ht" opt; do
+  case ${opt} in
+    h ) less "$usage"; exit ;;
+    t )
+      print_time=true
+      ;;
+    \? ) echo "Usage: cmd [-h] [-t]"
+      ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# parse positional arguments
+case $1 in
+    help) echo "$usage"; exit ;;
+
+    # when an integer greater 0 is given as first argument, interpret as seconds to sleep in between calls
+    ''|*[!1-9]*) seconds=1; command=$@ ;;
+
+    # interpret remaining arguments as command to call
+    *) seconds=$1; shift; command=$@ ;;
+esac
+
+while true; do
+    if [ "$print_time" = true ] ; then
+        printf `date "+%H:%M:%S"`
+        printf "  "
+    fi
+    $@;
+    sleep $seconds;
+done

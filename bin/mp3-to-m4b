@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+set -euo pipefail
+shopt -s nullglob
+
+# create portable temporary files (support both GNU and BSD mktemp)
+# tmp_list: a temp file for the ffmpeg concat list
+if tmp=$(mktemp 2>/dev/null); then
+    tmp_list="$tmp"
+else
+    # BSD mktemp often requires -t prefix
+    tmp_list=$(mktemp -t mp3list)
+fi
+
+# tmp_mp3: a temp filename ending with .mp3; prefer GNU --suffix if available
+if tmp=$(mktemp --suffix=.mp3 2>/dev/null); then
+    tmp_mp3="$tmp"
+else
+    if tmp=$(mktemp 2>/dev/null); then
+        tmp_mp3="${tmp}.mp3"
+    else
+        # final fallback for BSD: create a templated name and append .mp3
+        tmp_mp3="$(mktemp -t mp3file).mp3"
+    fi
+fi
+
+cleanup() {
+    rm -f "$tmp_list" "$tmp_mp3"
+}
+trap cleanup EXIT
+
+if [[ $# -eq 0 ]]; then
+    # no arg: use current directory, output named after directory
+    DIR=$(pwd)
+    OUT="$(basename "$DIR").m4b"
+    files=("$DIR"/*.mp3)
+elif [[ -f $1 ]]; then
+    # arg is a single file -> convert it to .m4b
+    infile="$1"
+    OUT="${infile%.*}.m4b"
+    ffmpeg -y -i "$infile" -vn -c:a aac -b:a 192k "$OUT"
+    exit 0
+elif [[ -d $1 ]]; then
+    DIR="$1"
+    OUT="$(basename "$DIR").m4b"
+    files=("$DIR"/*.mp3)
+else
+    # arg provided but not an existing file/dir -> treat as output filename, use cwd mp3s
+    OUT="$1"
+    files=("./"*.mp3)
+fi
+
+if [[ ${#files[@]} -eq 0 ]]; then
+    echo "No .mp3 files found to concatenate." >&2
+    exit 1
+fi
+
+# create ffmpeg concat list (safe for spaces/newlines)
+for f in "${files[@]}"; do
+    printf "file '%s'\n" "$f" >> "$tmp_list"
+done
+
+# concat into temporary mp3 (copy streams if possible)
+ffmpeg -y -f concat -safe 0 -i "$tmp_list" -c copy "$tmp_mp3"
+
+# re-encode to AAC inside an MP4 container (m4b)
+ffmpeg -y -i "$tmp_mp3" -vn -c:a aac -b:a 192k "$OUT"
+
+echo "Created: $OUT"

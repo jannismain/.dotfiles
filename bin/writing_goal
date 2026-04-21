@@ -1,0 +1,117 @@
+#!/usr/bin/env python3
+"""
+Track writing goal - Count characters in a markdown file, ignoring markdown syntax.
+
+Usage: writing_goal [-v] [-w] [-h] [GOAL] [MD_FILE]
+
+Arguments:
+  GOAL      Target number of characters (default: 10_000).
+  MD_FILE   Path to the markdown file (default: first .md file in current directory).
+
+Options:
+  -v   Verbose mode: print cleaned content to console.
+  -w   Write cleaned content to a .cleaned.txt file.
+  -h   Show this help message and exit.
+
+Examples:
+  writing_goal
+  writing_goal 12000
+  writing_goal draft.md
+  writing_goal -v -w 8000 draft.md
+"""
+
+from pathlib import Path
+
+CHARACTER_GOAL = 10_000
+
+BOLD = "\033[1m"
+RESET = "\033[0m"
+
+
+def bold(s: str) -> str:
+    return f"{BOLD}{s}{RESET}"
+
+
+def count_characters(
+    fp: Path | str = "article.md",
+    character_goal: int = CHARACTER_GOAL,
+    verbose: bool = False,
+    write_to_file: bool = False,
+) -> int:
+    with open(fp) as f:
+        content = f.read()
+
+    import re
+
+    # remove markdown comments from content
+    content = re.sub(r"<!--.*?-->", "", content, flags=re.DOTALL | re.MULTILINE)
+
+    # remove markdown heading prefixes
+    content = re.sub(r"^#+\s*", "", content, flags=re.MULTILINE)
+
+    # remove link targets (only keep link label)
+    content = re.sub(r"!{0,1}\[([^\]]+)\]\([^\)]+\)", r"\1", content)
+
+    # remove anonymous footnote references and keep only footnote content
+    content = re.sub(r"\[\^[^\]]+\]:{0,1}\s", "", content)
+
+    # remove code fences, only keep content
+    content = re.sub(
+        r"`{3,}(.*?)\n(.*?)`{3,}", r"\2", content, flags=re.DOTALL | re.MULTILINE
+    )
+
+    # remove inline code marks, only keep content
+    content = re.sub(r"`{1,2}(.*?)`{1,2}", r"\1", content, flags=re.DOTALL)
+
+    # remove multiple consecutive newlines
+    content, n_subs = re.subn(r"\n{2,}", r"\n\n", content)
+    print(n_subs)
+
+    if verbose:
+        print(content, end="\n\n")
+    if write_to_file:
+        Path(fp).with_suffix(".cleaned.txt").write_text(content)
+    print(
+        f"{BOLD}-> {len(content)} / {character_goal} characters ({len(content) / character_goal:.2%}){RESET}"
+    )
+
+    return len(content)
+
+
+if __name__ == "__main__":
+    import glob
+    import sys
+
+    f, goal, verbose, write_to_file = None, None, None, None
+    if "-h" in sys.argv or "--help" in sys.argv:
+        print(__doc__.lstrip())
+        exit(0)
+    if "-v" in sys.argv:
+        verbose = True
+        sys.argv.remove("-v")
+    if "-w" in sys.argv:
+        write_to_file = True
+        sys.argv.remove("-w")
+    while len(sys.argv) > 1:
+        if (arg := sys.argv[1]).isdigit():
+            goal = int(arg)
+        elif arg.endswith(".md"):
+            f = sys.argv[1]
+        sys.argv.pop(1)
+
+    if f is None:
+        try:
+            f = next(f for f in glob.glob("*.md"))
+        except StopIteration:
+            print(
+                "Error: No markdown file given and none found in current directory.",
+                file=sys.stderr,
+            )
+            exit(1)
+
+    count_characters(
+        f,
+        character_goal=goal or CHARACTER_GOAL,
+        verbose=verbose or False,
+        write_to_file=write_to_file or False,
+    )
