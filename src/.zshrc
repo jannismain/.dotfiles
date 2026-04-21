@@ -56,7 +56,7 @@ z4h init || return
 
 # Extend PATH.
 path=(~/bin ~/.dotfiles/bin ~/.dotfiles/private/bin /opt/homebrew/bin /usr/local/bin $path)
-fpath=(~/.dotfiles/.zfunc /Users/main/.docker/completions $fpath)
+fpath=(/Users/main/.dotfiles/.zfunc /Users/main/.docker/completions /Users/main/.zsh/completions $fpath)
 
 # Export environment variables.
 export GPG_TTY=$(tty)
