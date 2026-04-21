@@ -1,0 +1,4 @@
+ext/
+sessions/
+__pycache__/
+.pytest_cache/
