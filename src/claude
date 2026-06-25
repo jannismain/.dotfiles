@@ -5,12 +5,23 @@ source ~/.dotfiles/private/secrets
 # export ENABLE_TOOL_SEARCH=0
 export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1
 export CLAUDE_CODE_ENABLE_TELEMETRY=0
-export ANTHROPIC_BASE_URL="https://api.portkey.ai"
-export ANTHROPIC_AUTH_TOKEN="dummy"
-export ANTHROPIC_CUSTOM_HEADERS="x-portkey-api-key: ${PORTKEY_API_KEY}"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="@vertex-ai/anthropic.claude-sonnet-4-6"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="@vertex-ai/anthropic.claude-haiku-4-5@20251001"
-export ANTHROPIC_DEFAULT_OPUS_MODEL="@vertex-ai/anthropic.claude-opus-4-6"
+
+# Claude Code via Portkey
+# export ANTHROPIC_BASE_URL="https://api.portkey.ai"
+# export ANTHROPIC_AUTH_TOKEN="dummy"
+# export ANTHROPIC_CUSTOM_HEADERS="x-portkey-api-key: ${PORTKEY_API_KEY}"
+# export ANTHROPIC_DEFAULT_SONNET_MODEL="@vertex-ai/anthropic.claude-sonnet-4-6"
+# export ANTHROPIC_DEFAULT_HAIKU_MODEL="@vertex-ai/anthropic.claude-haiku-4-5@20251001"
+# export ANTHROPIC_DEFAULT_OPUS_MODEL="@vertex-eu-global/anthropic.claude-opus-4-7"
+
+# Claude Code via Requesty
+export ANTHROPIC_BASE_URL="https://router.eu.requesty.ai"
+export ANTHROPIC_AUTH_TOKEN="${REQUESTY_API_KEY}"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="vertex/claude-sonnet-4-6@europe-west1"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="vertex/claude-haiku-4-5@europe-west1"
+# export ANTHROPIC_DEFAULT_HAIKU_MODEL="bedrock/claude-haiku-4-5@eu-central-1"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="vertex/claude-opus-4-8@eu"
+# export ANTHROPIC_DEFAULT_OPUS_MODEL="bedrock/claude-opus-4-8@eu-west-3"
 
 alias ccusage='pnpx ccusage "$@"'
 alias claude-usage='ccusage'
