@@ -17,7 +17,7 @@ export CLAUDE_CODE_ENABLE_TELEMETRY=0
 # Claude Code via Requesty
 export ANTHROPIC_BASE_URL="https://router.eu.requesty.ai"
 export ANTHROPIC_AUTH_TOKEN="${REQUESTY_API_KEY}"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="vertex/claude-sonnet-4-6@europe-west1"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="vertex/claude-sonnet-5@eu"
 export ANTHROPIC_DEFAULT_HAIKU_MODEL="vertex/claude-haiku-4-5@europe-west1"
 # export ANTHROPIC_DEFAULT_HAIKU_MODEL="bedrock/claude-haiku-4-5@eu-central-1"
 export ANTHROPIC_DEFAULT_OPUS_MODEL="vertex/claude-opus-4-8@eu"
