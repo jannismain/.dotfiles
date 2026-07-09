@@ -23,6 +23,7 @@ __pycache__
 
 # Node
 .npm
+node_modules
 
 # Local Configuration & Secrets
 .env
