@@ -1,0 +1,4 @@
+CODEX_TRACE_VIEWER_DIR="~/ext/codex-trace-viewer"
+
+alias codex-trace-viewer="$CODEX_TRACE_VIEWER_DIR/run.sh"
+alias codex-trace-viewer-update="git -C $CODEX_TRACE_VIEWER_DIR pull --rebase"
