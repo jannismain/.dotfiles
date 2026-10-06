@@ -2,30 +2,21 @@
 alias agentbox="~/ext/agentbox/agentbox"
 
 source ~/.dotfiles/private/secrets
-export ENABLE_TOOL_SEARCH=1
-export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1
-export CLAUDE_CODE_ENABLE_TELEMETRY=0
-
-# Claude Code via Portkey
-# export ANTHROPIC_BASE_URL="https://api.portkey.ai"
-# export ANTHROPIC_AUTH_TOKEN="dummy"
-# export ANTHROPIC_CUSTOM_HEADERS="x-portkey-api-key: ${PORTKEY_API_KEY}"
-# export ANTHROPIC_DEFAULT_SONNET_MODEL="@vertex-ai/anthropic.claude-sonnet-4-6"
-# export ANTHROPIC_DEFAULT_HAIKU_MODEL="@vertex-ai/anthropic.claude-haiku-4-5@20251001"
-# export ANTHROPIC_DEFAULT_OPUS_MODEL="@vertex-eu-global/anthropic.claude-opus-4-7"
-
 # Claude Code via Requesty
-export ANTHROPIC_BASE_URL="https://router.eu.requesty.ai"
-# only set when unset to allow for local directory overrides via .envrc files
-if [ -z "${ANTHROPIC_AUTH_TOKEN+x}" ]; then
-  export ANTHROPIC_AUTH_TOKEN="${REQUESTY_API_KEY}"
-fi
-export ANTHROPIC_DEFAULT_SONNET_MODEL="vertex/claude-sonnet-5@eu[1m]"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="vertex/claude-haiku-4-5@europe-west1"
-export ANTHROPIC_DEFAULT_OPUS_MODEL="vertex/claude-opus-5@eu[1m]"
-
-# save tokens on bash tool calls
-export BASH_MAX_OUTPUT_LENGTH=15000
+function claude-cc() {
+  # Preserve local auth-token overrides from .envrc files, including empty values.
+  env \
+    ENABLE_TOOL_SEARCH=1 \
+    CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1 \
+    CLAUDE_CODE_ENABLE_TELEMETRY=0 \
+    ANTHROPIC_BASE_URL="https://router.eu.requesty.ai" \
+    ANTHROPIC_AUTH_TOKEN="${ANTHROPIC_AUTH_TOKEN-${REQUESTY_API_KEY}}" \
+    ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-5-5@eu[1m]" \
+    ANTHROPIC_DEFAULT_HAIKU_MODEL="vertex/claude-haiku-4-5@europe-west1" \
+    ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-5-5@eu[1m]" \
+    BASH_MAX_OUTPUT_LENGTH=15000 \
+    claude "$@"
+}
 
 alias ccusage='pnpx ccusage "$@"'
 alias claude-usage='ccusage'
