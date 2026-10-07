@@ -1,1 +1,9 @@
-source <(docker completion zsh)
+# Cache the completion script; regenerate when the docker binary changes.
+() {
+  local cache=~/.cache/docker-completion.zsh docker_bin=${commands[docker]}
+  [[ -n $docker_bin ]] || return
+  if [[ ! -s $cache || $docker_bin -nt $cache ]]; then
+    mkdir -p ${cache:h} && docker completion zsh >| $cache
+  fi
+  source $cache
+}

@@ -117,7 +117,6 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt auto_menu
 
 
-autoload -Uz compinit; compinit
 zstyle ':completion:*' menu select
 
 
@@ -165,7 +164,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 # Added by Antigravity
 export PATH="/Users/main/.antigravity/antigravity/bin:$PATH"

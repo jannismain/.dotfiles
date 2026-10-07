@@ -41,9 +41,15 @@ function pipunall {
 
 
 # pytest
+# (lazy: register-python-argcomplete costs ~100ms)
 if command -v pytest &> /dev/null
 then
-    eval "$(register-python-argcomplete pytest)"
+    _pytest_lazy_complete() {
+        unfunction _pytest_lazy_complete
+        eval "$(register-python-argcomplete pytest)"
+        _python_argcomplete "$@"
+    }
+    compdef _pytest_lazy_complete pytest
 fi
 
 # hatch

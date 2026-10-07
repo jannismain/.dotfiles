@@ -1,10 +1,10 @@
 if command -v rbenv &> /dev/null
 then
-    eval "$(rbenv init -)"
+    eval "$(rbenv init - --no-rehash)"
 fi
 export PATH="/opt/homebrew/lib/ruby/gems/3.2.0/bin/:$PATH"
 
 # patch brew rbenv completions in favor of own completion file
 # that is compatible with fzf
-rbenv_brew_completions=`brew --prefix rbenv`/completions/rbenv.zsh
-echo "" > $rbenv_brew_completions
+rbenv_brew_completions=${HOMEBREW_PREFIX:-/opt/homebrew}/opt/rbenv/completions/rbenv.zsh
+[[ -s $rbenv_brew_completions ]] && echo "" > $rbenv_brew_completions

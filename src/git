@@ -11,7 +11,7 @@ alias gsr="git stash show -p | git apply --reverse"
 
 # git-extras
 if test $MYSHELL_ZSH; then
-    source `brew --prefix git-extras`/share/git-extras/git-extras-completion.zsh
+    source ${HOMEBREW_PREFIX:-/opt/homebrew}/opt/git-extras/share/git-extras/git-extras-completion.zsh
 else
-    source `brew --prefix git-extras`/etc/bash-completion/completions/git-extras
+    source ${HOMEBREW_PREFIX:-/opt/homebrew}/opt/git-extras/etc/bash-completion/completions/git-extras
 fi

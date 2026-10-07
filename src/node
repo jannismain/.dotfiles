@@ -4,9 +4,18 @@
 # alias node16='export PATH="/usr/local/opt/node/bin:$PATH"'
 
 # nvm
+# Lazy-loaded: sourcing nvm.sh costs ~500ms. Put the newest installed node on
+# PATH (nvm's "node" default alias) and load nvm on first use of nvm itself.
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+local _nvm_bins=($NVM_DIR/versions/node/v*/bin(N-/On))
+(( $#_nvm_bins )) && path=(${_nvm_bins[1]} $path)
+unset _nvm_bins
+_nvm_lazy_load() {
+  unset -f nvm _nvm_lazy_load
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm() { _nvm_lazy_load; nvm "$@"; }
 
 ###-begin-npm-completion-###
 #
